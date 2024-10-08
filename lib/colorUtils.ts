@@ -49,7 +49,8 @@ function rgbToHex(rgb: number[]): string {
 function hexToHsl(hex: string): number[] {
     const [r, g, b] = hexToRgb(hex).map(x => x / 255)
     const max = Math.max(r, g, b), min = Math.min(r, g, b)
-    let h = 0, s, l = (max + min) / 2
+    let h = 0, s = 0
+    const l = (max + min) / 2
 
     if (max !== min) {
         const d = max - min
